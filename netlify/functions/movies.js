@@ -59,7 +59,7 @@ exports.handler = async function(event) {
       }
       
       // Return only if the year and genre are the ones user requests. Also exclude movies with no runtimeMinutes 
-      if (movieListing.startYear == year && movieListing.genres == genre && movieListing.runtimeMinutes!==`\\N`){
+      if (movieListing.startYear == year && movieListing.genres.includes(genre) && movieListing.runtimeMinutes!==`\\N`){
         
         // add +1 if to the numResults if the year and the genre fit with the request
         returnValue.numResults = returnValue.numResults+1 
